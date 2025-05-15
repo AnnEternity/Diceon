@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_sample.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.dnd.ui.main.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_classFragment"
+            app:destination="@id/classFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_raceFragment"
+            app:destination="@id/raceFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_reminderFragment"
+            app:destination="@id/reminderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.dnd.ui.races.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="index"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/classFragment"
+        android:name="com.example.dnd.ui.classes.ClassFragment"
+        android:label="ClassFragment" >
+        <action
+            android:id="@+id/action_classFragment_to_classDetailFragment"
+            app:destination="@id/classDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/raceFragment"
+        android:name="com.example.dnd.ui.races.RaceFragment"
+        android:label="RaceFragment" >
+        <action
+            android:id="@+id/action_raceFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/classDetailFragment"
+        android:name="com.example.dnd.ui.classes.ClassDetailFragment"
+        android:label="ClassDetailFragment">
+        <argument
+            android:name="index"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/reminderFragment"
+        android:name="com.example.dnd.ui.reminder.ReminderFragment"
+        android:label="ReminderFragment" />
+</navigation>

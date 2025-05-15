@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance" />
+
+    <style name="TextAppearance.title_main">
+        <item name="android:textSize">40sp</item>
+        <item name="android:fontFamily">@font/grenze_gotisch_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.title_with_font">
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">@font/grenze_gotisch_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.title">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextAppearance.title_body">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.body">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

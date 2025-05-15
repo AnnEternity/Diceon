@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //text
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_title">24sp</dimen>
+    //padding
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="padding_normal">12dp</dimen>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_medium">10dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+    //margin
+    <dimen name="margin_vertical">6dp</dimen>
+    <dimen name="margin_horizontal">12dp</dimen>
+    <dimen name="margin_vertical_title">12dp</dimen>
+</resources>

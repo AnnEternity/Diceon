@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Diceon</string>
+    <string name="races">Races: </string>
+    <string name="classes">Classes: </string>
+    <string name="hot_die">Hot Die: </string>
+    <string name="proficiency">Proficiency: </string>
+    <string name="name">Name</string>
+    <string name="alignment">Alignment</string>
+    <string name="no_data">No data</string>
+    <string name="no_internet_connection"> No internet connection. Please check your network settings.</string>
+    <string name="reminder_channel_id" translatable="false">reminder_channel</string>
+    <string name="reminder_channel_name" translatable="true">Reminder</string>
+    <string name="timer_on">Start</string>
+    <string name="timer_off">Stop</string>
+    <string name="notification_title">DnD reminder</string>
+    <string name="message">It\'s time!</string>
+    <string name="message_subscribe_failed">Failed to subscribe to topic</string>
+    <string name="message_subscribed">Subscribed to topic</string>
+    <string name="timer_running">Timer is running…</string>
+    <string name="snooze">Snooze</string>
+    <string name="promt">When do you need a reminder?</string>
+    <string name="permission_denied_explanation">Notifications disabled</string>
+    <string name="settings">Settings</string>
+    <string name="dungeons_amp_dragons"><![CDATA[Dungeons & Dragons]]></string>
+    <string name="races_button">Races</string>
+    <string name="classes_button">Classes</string>
+    <string name="add_reminder">Add reminder</string>
+    <string name="reminder_image">A campfire in a dark forest — rest scene inspired by DnD adventures</string>
+    <string name="dragon_image">A dragon coiled around a D20 dice — Dungeons and Dragons themed illustration</string>
+    <string name="characters_image">Dungeons and Dragons characters</string>
+</resources>

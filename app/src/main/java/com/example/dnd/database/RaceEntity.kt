@@ -1,0 +1,12 @@
+package com.example.dnd.database
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "race")
+data class RaceEntity(
+    @PrimaryKey val index: String,
+    @ColumnInfo(name = "name") val name: String?,
+    @ColumnInfo(name = "alignment") val alignment: String?
+)

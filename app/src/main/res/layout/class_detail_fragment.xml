@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="detailClassVar"
+            type="com.example.dnd.database.ClassWithProficiencies" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/margin_horizontal"
+        android:layout_marginVertical="@dimen/margin_vertical">
+
+        <TextView
+            android:id="@+id/class_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{detailClassVar.classEntity.name}"
+            android:textAppearance="@style/TextAppearance.title_with_font"
+            app:layout_constraintBottom_toTopOf="@id/devider_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/name" />
+
+        <TextView
+            android:id="@+id/no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_data"
+            android:textAppearance="@style/TextAppearance.title_body"
+            app:layout_constraintBottom_toTopOf="@id/devider_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/devider_line"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/light_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/class_name" />
+
+        <TextView
+            android:id="@+id/hit_die_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hot_die"
+            android:textAppearance="@style/TextAppearance.body"
+            app:layout_constraintEnd_toStartOf="@id/hit_die"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/devider_line"
+            tools:text="Hot die: " />
+
+        <TextView
+            android:id="@+id/hit_die"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{detailClassVar.classEntity.hitDie.toString()}"
+            android:textAppearance="@style/TextAppearance.body"
+            app:layout_constraintStart_toEndOf="@id/hit_die_text"
+            app:layout_constraintTop_toBottomOf="@+id/devider_line"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/proficiency_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/proficiency"
+            android:textAppearance="@style/TextAppearance.body"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hit_die_text" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/proficiencyViewList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/proficiency_text"
+            tools:listitem="@layout/class_proficiency_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,9 @@
+package com.example.dnd.network
+
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class ResponseRacesResult(
+    val index: String?,
+    val name: String?
+)
