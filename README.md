@@ -44,11 +44,13 @@ The application includes the following main features:
 4. Class Detail Screen. Show class name, hit dice, and proficiencies in RecyclerView.
 5. Race List Screen. Load races from API and display details on click.
 6. Race Detail Screen. Show class name and description.
-7. Offline Support and Error Handling.Handle offline state in class and race lists: Display “No data” when no internet is available.
+7. Offline Support and Error Handling. Handle offline state in class and race lists: Display “No data” when no internet is available.
 8. Notification & Permission Logic. Show timer notifications with “Snooze” action; handle API-level permissions.
 9. Add design. Add custom font, app icon, UI tweaks, and error handling.
 
 # Screenshots
 <img src="Screenshots/Screenshot_main_screen.png" alt="Detail screen" width="200"/> <img src="Screenshots/Screenshot_reminder_screen.png" alt="Detail screen" width="200"/> 
+
 <img src="Screenshots/Screenshot_class_screen.png" alt="Detail screen" width="200"/> <img src="Screenshots/Screenshot_class_detail_screen.png" alt="Detail screen" width="200"/> 
+
 <img src="Screenshots/Screenshot_race_screen.png" alt="Detail screen" width="200"/> <img src="Screenshots/Screenshot_race_detail_screen.png" alt="Detail screen" width="200"/>
