@@ -10,9 +10,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil3.load
+import coil3.request.error
+import coil3.request.placeholder
 import com.example.dnd.R
 import com.example.dnd.database.RaceListEntity
 import com.example.dnd.databinding.RaceFragmentBinding
+
+private const val RACE_STATE_KEY = "RaceStateKey"
 
 class RaceFragment : Fragment() {
 
@@ -39,11 +43,17 @@ class RaceFragment : Fragment() {
         binding.recyclerViewList.adapter = adapter
         binding.recyclerViewList.layoutManager = LinearLayoutManager(requireContext())
         viewModel = ViewModelProvider(this).get(RaceViewModel::class.java)
-
-//            ViewModelProvider.create(this, ViewModelProvider.AndroidViewModelFactory()).get()
         binding.race = viewModel
         binding.lifecycleOwner = this.viewLifecycleOwner
-        binding.racesImage.load("https://f000.backblazeb2.com/file/dnd-udacity/races_image.png")
+        if (savedInstanceState != null) {
+            binding.raceMotion.transitionToState(savedInstanceState.getInt(RACE_STATE_KEY))
+        }
+        binding.racesImage.load(
+            "https://f000.backblazeb2.com/file/dnd-udacity/races_image.png",
+            builder = {
+                placeholder(R.drawable.image_placeholder)
+                error(R.drawable.image_placeholder)
+            })
 
         return binding.root
     }
@@ -54,5 +64,9 @@ class RaceFragment : Fragment() {
         }
     }
 
-
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        val currentState = binding.raceMotion.currentState
+        outState.putInt(RACE_STATE_KEY, currentState)
+    }
 }

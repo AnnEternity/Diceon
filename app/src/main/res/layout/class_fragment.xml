@@ -10,6 +10,7 @@
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/class_motion"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/margin_horizontal"

@@ -20,6 +20,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil3.load
+import coil3.request.error
+import coil3.request.placeholder
 import com.example.dnd.R
 import com.example.dnd.databinding.ReminderFragmentBinding
 import com.google.android.material.snackbar.Snackbar
@@ -59,7 +61,12 @@ class ReminderFragment : Fragment() {
                 requestPermission()
             } else viewModel.setAlarm(false)
         }
-        binding.reminderImage.load("https://f000.backblazeb2.com/file/dnd-udacity/reminder_image.png")
+        binding.reminderImage.load(
+            "https://f000.backblazeb2.com/file/dnd-udacity/reminder_image.png",
+            builder = {
+                placeholder(R.drawable.image_placeholder)
+                error(R.drawable.image_placeholder)
+            })
 
         return binding.root
     }

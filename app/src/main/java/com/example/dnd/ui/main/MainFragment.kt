@@ -7,9 +7,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import coil3.load
+import coil3.request.ImageRequest
+import coil3.request.crossfade
+import coil3.request.error
+import coil3.request.fallback
+import coil3.request.placeholder
+import com.example.dnd.R
 import com.example.dnd.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
+
+//    val request = ImageRequest.Builder(requireContext())
+//        .data("https://f000.backblazeb2.com/file/dnd-udacity/dragon_image.png")
+//        .crossfade(true)
+//        .target(binding.mainScreenImage)
+//        .build()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,7 +34,14 @@ class MainFragment : Fragment() {
         binding.classesButton.setOnClickListener { navToClasses() }
         binding.addReminderButton.setOnClickListener { navToReminder() }
 
-        binding.mainScreenImage.load("https://f000.backblazeb2.com/file/dnd-udacity/dragon_image.png")
+
+
+        binding.mainScreenImage.load(
+            "https://f000.backblazeb2.com/file/dnd-udacity/dragon_image.png",
+            builder = {
+                placeholder(R.drawable.image_placeholder)
+                error(R.drawable.image_placeholder)
+            })
 
         return binding.root
     }

@@ -10,9 +10,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil3.load
+import coil3.request.error
+import coil3.request.placeholder
 import com.example.dnd.R
 import com.example.dnd.database.ClassListEntity
 import com.example.dnd.databinding.ClassFragmentBinding
+
+private const val CLASS_STATE_KEY = "ClassStateKey"
 
 class ClassFragment : Fragment() {
 
@@ -41,8 +45,15 @@ class ClassFragment : Fragment() {
         binding.lifecycleOwner = this.viewLifecycleOwner
         binding.recyclerViewList.adapter = adapter
         binding.recyclerViewList.layoutManager = LinearLayoutManager(requireContext())
-
-        binding.classesImage.load("https://f000.backblazeb2.com/file/dnd-udacity/races_image.png")
+        if (savedInstanceState != null) {
+            binding.classMotion.transitionToState(savedInstanceState.getInt(CLASS_STATE_KEY))
+        }
+        binding.classesImage.load(
+            "https://f000.backblazeb2.com/file/dnd-udacity/races_image.png",
+            builder = {
+                placeholder(R.drawable.image_placeholder)
+                error(R.drawable.image_placeholder)
+            })
 
         return binding.root
     }
@@ -51,5 +62,11 @@ class ClassFragment : Fragment() {
         viewModel.list.observe(viewLifecycleOwner) {
             adapter.updateListClassesCurrent(it)
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        val currentState = binding.classMotion.currentState
+        outState.putInt(CLASS_STATE_KEY, currentState)
     }
 }

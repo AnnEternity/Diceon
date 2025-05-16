@@ -45,7 +45,7 @@
         <TextView
             android:id="@+id/devider_line"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
+            android:layout_height="@dimen/padding_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/race_name"
