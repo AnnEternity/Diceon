@@ -51,7 +51,7 @@
             android:id="@+id/hit_die_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hot_die"
+            android:text="@string/hit_dice"
             android:textAppearance="@style/TextAppearance.body"
             app:layout_constraintEnd_toStartOf="@id/hit_die"
             app:layout_constraintStart_toStartOf="parent"

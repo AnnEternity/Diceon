@@ -2,7 +2,7 @@
     <string name="app_name">Diceon</string>
     <string name="races">Races: </string>
     <string name="classes">Classes: </string>
-    <string name="hot_die">Hot Die: </string>
+    <string name="hit_dice">Hit Die: </string>
     <string name="proficiency">Proficiency: </string>
     <string name="name">Name</string>
     <string name="alignment">Alignment</string>
